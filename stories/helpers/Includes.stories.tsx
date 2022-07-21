@@ -18,6 +18,8 @@ const IncludesComponent = (props: any) => {
 	}, [props]);
 
 	const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
+		isBlank(0);
+		
 		setData({ name: e.target.value });		
 	};
 

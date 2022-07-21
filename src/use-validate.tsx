@@ -19,7 +19,7 @@ const useValidate = (initial: any) => {
 	const required = (id: string, msg: string) => (d: any) => isBlank(d[id]) ? { id, msg } : null;
 	const empty = (id: string, msg: string) => (d: any) => isEmpty(d[id]) ? { id, msg } : null;
   const notEmpty = (id: string, msg: string) => (d: any) => !isEmpty(d[id]) ? { id, msg } : null;
-  const contains = (id: string, val: any, msg: string = '') => (d: any) => includes(d[id], val) ? { id, msg } : null;
+  const contains = (id: string, val: any, msg = '') => (d: any) => includes(d[id], val) ? { id, msg } : null;
 	const pattern = (id: string, regex: RegExp, msg: string) => (d: any) => !hasPattern(d[id], regex) ? { id, msg } : null;
   const minlength = (id: string, n: number, msg: string) => (d: any) => !hasMinLength(d[id], n) ? { id, msg } : null;
   const maxlength = (id: string, n: number, msg: string) => (d: any) => !hasMaxLength(d[id], n) ? { id, msg } : null;

@@ -37,13 +37,13 @@ const RequiredComponent = (props: any) => {
 				<Stack spacing={2} sx={{ backgroundColor: "#ffffff", p: 4, width: "100%" }}>
 					<Divider textAlign="center">Model</Divider>
 					<pre>
-						&#10100; "name": "{data.name}" &#125;
+						&#10100; &quot;name&quot;: &quot;{data.name}&quot; &#125;
 					</pre>
 				</Stack>
 				<Stack spacing={2} sx={{ backgroundColor: "#ffffff", p: 4, width: "100%" }}>
 					<Divider textAlign="center">Validator</Divider>
 					<pre>
-						required("name", "Name is required")
+						required(&quot;name&quot;, &quot;Name is required&quot;)
 					</pre>
 				</Stack>
 			</Stack>	

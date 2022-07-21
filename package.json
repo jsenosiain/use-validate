@@ -1,27 +1,39 @@
 {
-  "name": "use-validate-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "use-validate",
+  "version": "1.0.0",
+  "description": "React Validation Hook",
+	"author": "Joaquin Senosiain (jsenosiain)",
+  "license": "MIT",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "prepublishOnly": "npm test && npm run lint",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "test": "jest --config jestconfig.json",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsenosiain/use-validate.git"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "dependencies": {
+    "lodash": ">= 4"
+  },
+  "devDependencies": {
     "@alexanderjeurissen/use-storybook": "^2.0.5",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/material": "^5.9.1",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.11.45",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
-    "lodash": "^4.17.21",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.7.4",
-    "web-vitals": "^2.1.4"
-  },
-  "devDependencies": {
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -32,16 +44,29 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.45",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "jest": "^28.1.3",
+    "jest-canvas-mock": "^2.4.0",
+    "jest-environment-jsdom": "^28.1.3",
+    "lodash": "^4.17.21",
     "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4",
     "webpack": "^5.73.0"
   },
-  "scripts": {
-    "start": "",
-    "build": "",
-    "test": "",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+  "peerDependencies": {
+    "lodash": ">= 4",
+    "react": ">= 16"
   },
   "eslintConfig": {
     "extends": [
